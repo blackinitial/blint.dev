@@ -1,0 +1,23 @@
+---
+const menus: { title: string, url: string }[] = [
+  { title: 'Home', url: '/' },
+	{ title: 'Work', url: '/work/' },
+  { title: 'Blog', url: '/blog/' },
+	{ title: 'About', url: '/about/' },
+]
+---
+<div class="relative flex justify-center sm:justify-start px-6 mt-8 mx-auto max-w-5xl mb-4 sm:-mb-16 z-10">
+  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-5xl bg-white shadow-md">
+    {menus.map(({ title, url }) => (
+      <a href={url}
+        aria-current={Astro.url.pathname === url}
+        class={
+          `px-4 py-2 mr-2 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
+            ${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
+              ? 'text-white bg-amber-500' : 'text-slate-900'}`
+        }>
+        {title}
+      </a>
+    ))}
+  </div>
+</div>

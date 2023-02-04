@@ -1,4 +1,5 @@
 ---
+import Nav from '../components/Nav.astro';
 import Button from '../components/Button.astro';
 import Icon, { Props as IconProps } from '../components/Icon.astro';
 
@@ -28,7 +29,8 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 	<title>{name} - {role}</title>
 </head>
 
-<body>
+<body class="bg-amber-100">
+	<Nav />
 	<section id="hero" aria-labelledby="hero-title"
 		class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
 		<div class="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
