@@ -1,9 +1,18 @@
 ---
-// Component Imports
 import Button from '../components/Button.astro';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const name = "Ibrohim Hanafi"
+const role = `Frontend Developer & <br> Jr. Product Designer`
+const description = `A self-taught developer, tech researcher, product designer, and lifelong learner, this individual possesses a unique set of skills that sets them apart in the tech industry. 
+	With a passion for technology and design, he has honed their skills in frontend development, product design, and research. 
+	Their ability to adapt and learn quickly has allowed them to stay current with industry trends and advancements. 
+	As creative problem-solver, they bring a unique perspective to the development process and have a talent for creating user-friendly, visually appealing products which is a valuable asset.`
+const socials = [
+	{ title: 'Twitter', icon: 'twitter', url: 'https://twitter.com/bl_int' },
+	{ title: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/ibrohim.mahmud.hanafi' },
+	{ title: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/bl_int/' },
+	{ title: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/blackinitial' },
+]
 ---
 
 <html lang="en">
@@ -13,15 +22,10 @@ import Button from '../components/Button.astro';
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta name="generator" content={Astro.generator} />
-	<title>Astro + TailwindCSS</title>
+	<title>{name} - {role}</title>
 </head>
 
 <body>
-	<!-- <div class="grid place-items-center h-screen content-center">
-		<Button>Tailwind Button in Astro!</Button>
-		<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-	</div> -->
-
 	<section id="hero" aria-labelledby="hero-title"
 		class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
 		<div class="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
@@ -46,34 +50,25 @@ import Button from '../components/Button.astro';
 						loading="lazy">
 				</div>
 				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-					<Button>Say Hi!</Button>
-					<p class="mt-8 font-display text-5xl font-extrabold tracking-normal leading-relaxed text-slate-900 sm:text-5xl">
-						<span class="block text-amber-500">Ibrohim Hanafi –</span>
-						Frontend Developer &amp; <br> Jr. Product Designer
+					<Button>Say Hi 👋🏻!</Button>
+					<p class="mt-8 font-display text-4xl font-extrabold tracking-normal leading-tight text-slate-900 sm:text-5xl">
+						<span class="block text-amber-500">{name} –</span>
+						<span set:html={role}/>
 					</p>
-					<p class="mt-4 text-lg tracking-tight leading-relaxed text-slate-700">
-						A self-taught developer, tech researcher, product designer, and lifelong learner, this individual possesses a unique set of skills that sets them apart in the tech industry. 
-						With a passion for technology and design, he has honed their skills in frontend development, product design, and research. 
-						Their ability to adapt and learn quickly has allowed them to stay current with industry trends and advancements. 
-						As creative problem-solver, they bring a unique perspective to the development process and have a talent for creating user-friendly, visually appealing products which is a valuable asset.
-					</p>
-					<div class="mx-4 flex flex-col items-center justify-center md:flex-row">
-						<div class="mx-4 mt-8 "><a
-								class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300"
-								target="_blank" href="https://twitter.com/bl_int"><svg aria-hidden="true" viewBox="0 0 40 40"
-									class="h-10 w-10 fill-current">
-									<path
-										d="M13.817 33.753c12.579 0 19.459-10.422 19.459-19.458 0-.297 0-.592-.02-.884a13.913 13.913 0 0 0 3.411-3.543 13.65 13.65 0 0 1-3.928 1.077 6.864 6.864 0 0 0 3.007-3.784 13.707 13.707 0 0 1-4.342 1.66 6.845 6.845 0 0 0-11.655 6.239A19.417 19.417 0 0 1 5.654 7.915a6.843 6.843 0 0 0 2.117 9.128 6.786 6.786 0 0 1-3.104-.853v.086a6.842 6.842 0 0 0 5.487 6.704 6.825 6.825 0 0 1-3.088.116 6.847 6.847 0 0 0 6.39 4.75A13.721 13.721 0 0 1 3.334 30.68a19.36 19.36 0 0 0 10.483 3.066">
-									</path>
-								</svg><span class="ml-4">Follow on Twitter</span></a></div>
-						<div class="mx-4 mt-8"><a
-								class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300"
-								target="_blank" href="https://www.linkedin.com/in/blackinitial"><svg aria-hidden="true"
-									viewBox="0 0 24 24" class="h-10 w-10 fill-current">
-									<path
-										d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-									</path>
-								</svg><span class="ml-4">Follow on LinkedIn</span></a></div>
+					<p class="mt-4 text-lg tracking-tight leading-relaxed text-slate-700">{description}</p>
+
+					<div class="mx-4 flex items-center justify-center">
+						{socials.map(social => (
+							<div class="mx-4 mt-8 ">
+								<a target="_blank" href={social.url} title={`Follow on ${social.title}`} class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300">
+									<svg aria-hidden="true" viewBox="0 0 40 40" class="h-10 w-10 fill-current">
+										<path
+											d="M13.817 33.753c12.579 0 19.459-10.422 19.459-19.458 0-.297 0-.592-.02-.884a13.913 13.913 0 0 0 3.411-3.543 13.65 13.65 0 0 1-3.928 1.077 6.864 6.864 0 0 0 3.007-3.784 13.707 13.707 0 0 1-4.342 1.66 6.845 6.845 0 0 0-11.655 6.239A19.417 19.417 0 0 1 5.654 7.915a6.843 6.843 0 0 0 2.117 9.128 6.786 6.786 0 0 1-3.104-.853v.086a6.842 6.842 0 0 0 5.487 6.704 6.825 6.825 0 0 1-3.088.116 6.847 6.847 0 0 0 6.39 4.75A13.721 13.721 0 0 1 3.334 30.68a19.36 19.36 0 0 0 10.483 3.066">
+										</path>
+									</svg>
+								</a>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
