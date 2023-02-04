@@ -3,19 +3,18 @@
 // Styled by Tailwind :)
 ---
 
-<!-- <button
-	class="py-2 px-4 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75"
->
-	<slot />
-</button> -->
-
-<button
-	class="rounded-full py-1 px-4 text-amber-500 ring-1 ring-inset ring-amber-500 font-semibold focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75"
->
+<button class="rounded-full py-1 px-4 text-amber-500 ring-1 ring-inset ring-amber-500 font-semibold focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75">
 	<slot />
 </button>
 
 <script>
 	import confetti from 'canvas-confetti';
-	document.body.querySelector('button').addEventListener('click', () => confetti());
+	document.body.querySelector('button')
+		.addEventListener('click', () => confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { x: 0.2, y: 0.4 },
+			angle: 55
+		})
+	);
 </script>
