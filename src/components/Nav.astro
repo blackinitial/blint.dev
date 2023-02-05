@@ -3,18 +3,18 @@ import Icon from '../components/Icon.astro';
 
 const menus: { title: string, url: string }[] = [
   { title: 'Home', url: '/' },
-	{ title: 'Work', url: '/work/' },
+	{ title: 'Project', url: '/project/' },
   { title: 'Blog', url: '/blog/' },
 	{ title: 'About', url: '/about/' },
 ]
 ---
-<div class="relative flex justify-center sm:justify-start px-6 mt-8 mx-auto max-w-5xl mb-4 sm:-mb-16 z-10">
+<div class="relative flex justify-center sm:justify-start px-6 mt-0 mx-auto max-w-5xl mb-4 sm:mt-8 sm:-mb-16 z-10">
   <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-5xl bg-brand-card drop-shadow-md">
     {menus.map(({ title, url }) => (
       <a href={url}
         aria-current={Astro.url.pathname === url}
         class={
-          `px-4 py-2 mr-2 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
+          `px-4 py-2 mr-1 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
             ${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
               ? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-brand'}`
         }>
@@ -34,7 +34,7 @@ const menus: { title: string, url: string }[] = [
 
 <style>
 	button.theme-toggle {
-    @apply flex border-2 rounded-full outline-1 cursor-pointer shadow-inner bg-brand;
+    @apply flex border rounded-full outline-1 cursor-pointer shadow-inner bg-brand;
 	}
 
 	.icon {
