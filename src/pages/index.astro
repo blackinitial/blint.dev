@@ -1,10 +1,10 @@
 ---
-import Nav from '../components/Nav.astro';
+import MainLayout from '../layouts/main.astro';
 import Button from '../components/Button.astro';
 import Icon, { Props as IconProps } from '../components/Icon.astro';
 
 const name: string = "Ibrohim Hanafi"
-const role: string = `Frontend Developer & <br> Jr. Product Designer`
+const role: string = `Frontend Developer & Jr. Product Designer`
 const description: string = `A self-taught developer, tech researcher, product designer, and lifelong learner from Indonesia. This individual possesses a unique set of skills that sets them apart in the tech industry. 
 	With a passion for technology and design, he has honed their skills in frontend development, product design, and research. 
 	His ability to adapt and learn quickly has allowed him to stay current with industry trends and advancements. 
@@ -19,23 +19,12 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 ]
 ---
 
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>{name} - {role}</title>
-</head>
-
-<body class="bg-amber-100">
-	<Nav />
+<MainLayout title={`${name} - ${role}`} description={description}>
 	<section id="hero" aria-labelledby="hero-title"
-		class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16">
+		class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-full">
+		<!-- boxes background -->
 		<div class="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
-			<!-- rect backgorund -->
-			<svg aria-hidden="true" class="absolute inset-0 h-full w-full">
+			<svg aria-hidden="true" class="absolute inset-0 h-full w-full bg-brand-primary text-amber-300">
 				<defs>
 					<pattern id=":R1rm:" width="128" height="128" patternUnits="userSpaceOnUse" x="50%" y="100%">
 						<path d="M0 128V.5H128" fill="none" stroke="currentColor"></path>
@@ -45,26 +34,26 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 			</svg>
 		</div>
 
-		<div class="relative mx-auto max-w-5xl pt-16 sm:px-6">
-			<div class="bg-slate-50 pt-px sm:rounded-6xl">
-				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
+		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
+			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl">
+				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 drop-shadow-xl md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
 					<img alt="" sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
 						srcset="/avatar.jpeg"
 						src="/avatar.jpeg" width="400"
 						height="400" decoding="async" data-nimg="future" class="absolute inset-0 h-full w-full object-cover"
 						loading="lazy">
 				</div>
-				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
+				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
 					<Button>Say Hi 👋🏻!</Button>
 					<p class="mt-8 font-display text-4xl font-extrabold tracking-normal leading-tight text-slate-900 sm:text-5xl">
-						<span class="block text-transparent bg-clip-text bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700">{name} –</span>
-						<span set:html={role}/>
+						<span class="block shining-text">{name} –</span>
+						<span class="text-brand-head" set:html={role.replace("&", "& <br />")}/>
 					</p>
-					<p class="mt-4 text-lg tracking-tight leading-relaxed text-slate-500">{description}</p>
+					<p class="mt-4 text-lg tracking-tight leading-relaxed text-brand">{description}</p>
 
-					<div class="mx-4 flex flex-row flex-wrap items-center justify-center">
+					<div class="mx-4 mt-4 flex flex-row flex-wrap items-center justify-center">
 						{socials.map(({ title, url, icon }) => (
-							<div class="mx-4 mt-8 ">
+							<div class="mx-4 mt-8">
 								<a target="_blank" href={url} title={`Follow on ${title}`} class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300">
 									<Icon icon={icon} size="1.75em" color="var(--gradient-stop-2)" gradient />
 								</a>
@@ -75,14 +64,22 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 			</div>
 		</div>
 	</section>
-</body>
+</MainLayout>
 
-</html>
+<style>
+.shining-text {
+	@apply text-transparent bg-clip-text bg-gradient-to-br from-amber-100 via-amber-500 to-amber-700;
+  animation: shine 3s linear infinite;
+}
 
-<style is:global>
-	:root {
-		--gradient-stop-1: #fde68a;
-		--gradient-stop-2: #f59e0b;
-		--gradient-stop-3: #92400e;
-	}
+@keyframes shine {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
 </style>

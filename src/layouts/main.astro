@@ -1,5 +1,13 @@
 ---
-const { content } = Astro.props;
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -7,9 +15,13 @@ const { content } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
+		<meta name="description" property="og:description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-brand">
+		<Nav />
+		<!-- <h1 style="color: var(--brand-primary); font-size: 2rem;">testing global css</h1> -->
 		<slot />
 	</body>
 </html>

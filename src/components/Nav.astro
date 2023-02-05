@@ -1,4 +1,6 @@
 ---
+import Icon from '../components/Icon.astro';
+
 const menus: { title: string, url: string }[] = [
   { title: 'Home', url: '/' },
 	{ title: 'Work', url: '/work/' },
@@ -7,17 +9,109 @@ const menus: { title: string, url: string }[] = [
 ]
 ---
 <div class="relative flex justify-center sm:justify-start px-6 mt-8 mx-auto max-w-5xl mb-4 sm:-mb-16 z-10">
-  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-5xl bg-white shadow-md">
+  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-5xl bg-brand-card drop-shadow-md">
     {menus.map(({ title, url }) => (
       <a href={url}
         aria-current={Astro.url.pathname === url}
         class={
           `px-4 py-2 mr-2 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
             ${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
-              ? 'text-white bg-amber-500' : 'text-slate-900'}`
+              ? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-brand'}`
         }>
         {title}
       </a>
     ))}
+
+    <theme-toggle>
+      <button class="theme-toggle">
+        <span class="sr-only">Dark theme</span>
+        <span class="icon light"><Icon icon="sun" /></span>
+        <span class="icon dark"><Icon icon="moon-stars" /></span>
+      </button>
+    </theme-toggle>
   </div>
 </div>
+
+<style>
+	button.theme-toggle {
+    @apply flex border-2 rounded-full outline-1 cursor-pointer shadow-inner bg-brand;
+	}
+
+	.icon {
+    @apply relative z-10 w-8 h-8 flex items-center justify-center rounded-full text-slate-200;
+	}
+
+	.icon.light::before {
+    @apply -z-10 absolute inset-0 bg-brand-primary rounded-full;
+		content: '';
+	}
+
+	:global(.theme-dark) .icon.light::before {
+		transform: translateX(100%);
+	}
+
+	:global(.theme-dark) .icon.dark,
+	:global(html:not(.theme-dark)) .icon.light,
+	button[aria-pressed='false'] .icon.light {
+		@apply text-slate-200;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.icon,
+		.icon.light::before {
+			transition: transform 0.2s ease-in-out;
+		}
+	}
+
+	@media (forced-colors: active) {
+		.icon.light::before {
+			background-color: SelectedItem;
+		}
+	}
+</style>
+
+<script>
+	// This code is inlined in the head to make dark mode instant & blocking.
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+
+	if (typeof localStorage !== 'undefined') {
+		// Watch the document element and persist user preference when it changes.
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('theme-dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+
+  class ThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+
+			const button = this.querySelector('button.theme-toggle')!;
+
+			/** Set the theme to dark/light mode. */
+			const setTheme = (dark: boolean) => {
+				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
+				button.setAttribute('aria-pressed', String(dark));
+			};
+
+			// Toggle the theme when a user clicks the button.
+			button.addEventListener('click', () => setTheme(!this.isDark()));
+
+			// Initialize button state to reflect current theme.
+			setTheme(this.isDark());
+		}
+
+		isDark() {
+			return document.documentElement.classList.contains('theme-dark');
+		}
+	}
+	customElements.define('theme-toggle', ThemeToggle);
+</script>
