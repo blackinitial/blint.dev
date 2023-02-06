@@ -20,7 +20,7 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 ---
 
 <MainLayout title={`${name} - ${role}`} description={description}>
-	<section id="hero" aria-labelledby="hero-title" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-full">
+	<section id="hero-home" aria-labelledby="hero-home" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-full">
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
 			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl">
 				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 drop-shadow-xl md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
@@ -36,7 +36,7 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 						<span class="block shining-text">{name} –</span>
 						<span class="text-brand-head" set:html={role.replace("&", "& <br />")}/>
 					</p>
-					<p class="mt-4 text-lg tracking-tight leading-relaxed text-brand">{description}</p>
+					<p class="mt-4 text-lg antialiased tracking-tight leading-relaxed text-brand">{description}</p>
 
 					<div class="mx-4 mt-4 flex flex-row flex-wrap items-center justify-center">
 						{socials.map(({ title, url, icon }) => (

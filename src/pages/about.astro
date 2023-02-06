@@ -1,0 +1,44 @@
+---
+import MainLayout from '../layouts/main.astro';
+
+const title: string = "About Me ✌🏻"
+---
+
+<MainLayout title={title}>
+  <section id="hero-about" aria-labelledby="hero-about" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-auto">
+		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
+			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl relative">
+        <span class="absolute -top-16 sm:-top-20 right-40 text-7xl sm:text-9xl antialiased text-center">👨🏻‍💻</span>
+        
+				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
+					<p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl">
+						{title}
+					</p>
+					<div class="mt-4 antialiased text-brand prose prose-lg">
+            <p>A self-taught developer, tech researcher, product designer, and lifelong learner from Indonesia. This individual possesses a unique set of skills that sets them apart in the tech industry.</p>
+            <p>With a passion for technology and design, he has honed their skills in frontend development, product design, and research.</p>
+            <p>His ability to adapt and learn quickly has allowed him to stay current with industry trends and advancements.</p>
+            <p>As a creative problem-solver, he brings a unique perspective to the development process and has a talent for creating user-friendly, visually appealing products which is a valuable asset.</p>
+          </div>
+
+          <p class="mt-8 font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl">
+						Story 📰
+					</p>
+					<article class="mt-4 antialiased text-brand prose prose-lg">
+            <p>I've always liked technology since I was a kid, I like to look at games, and think about how things work. but unfortunately at that time, I wasn't close to computers (they didn't support it). I like art and visual images, I used to love drawing paper and including my drawings (calligraphy), until I just saw the cracks in the wall, and my imagination explored.</p>
+            <p>I started to know computers massively in internet cafes in junior high school in 2007, often internet every time I came home from school, watched youtube, and liked to survive on the internet, but not until maniacal online games. at that time I didn't know how to make a website either.</p>
+            <p>When I was in high school + after 3 years at the boarding school, I started holding a Symbian cellphone and liked to modify the appearance of the cellphone starting with themes, icons, and widgets. started learning a little python language just for display scripting. learned to write blogs sharing Symbian applications (illegal) and entered internet forums.</p>
+            <p>At the end of the year at the cottage (2016) I was able to buy a cheap HP brand laptop for 1 million with intel dual core specs. starting at that time I learned HTML, and CSS from the internet (website articles) and continued to learn programming at a non-formal boarding IT school like the cottage. There I learned many things about the vast and complex world of software engineering. 
+              Learning HTML, CSS, PHP, Python, WordPress, and Laravel until learning Odoo ERP. At that time I also began to recognize Linux and was very enthusiastic about using Linux, tweaking, and exploring it.</p>
+            <p>In 2017, I finally bought a decent laptop with AMD A9 spec and 4GB RAM and started working at a B2B ticketing startup. At that time I was familiar with the Linux OS and I used it daily, it was so powerful that I only used WM because it was to increase laptop performance.
+              I learned a lot about the fast-growing javascript programming ecosystem, especially React and Vue frameworks, even though the technology where I worked was still using legacy technology.
+              I enjoy working as a Frontend Developer until now and designing app interfaces that are pleasing to the eye and functional in experience.</p>
+            <p>I like to explore the development of technology, especially web technology, read programming articles, watch programming videos, and participate in technology forums. Continue to learn to improve logic and problem-solving to become a relevant software engineer according to technological developments.</p>
+            <p>Currently, I focus on becoming a Fullstack Developer and Product Designer which I think is relevant to what I like 😃.</p>
+          </article>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</MainLayout>
