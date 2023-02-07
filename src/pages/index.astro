@@ -1,4 +1,6 @@
 ---
+import { Image } from '@astrojs/image/components';
+import avatarImage from '../assets/avatar.jpeg';
 import MainLayout from '../layouts/main.astro';
 import Button from '../components/Button.astro';
 import Icon, { Props as IconProps } from '../components/Icon.astro';
@@ -24,11 +26,7 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
 			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl">
 				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 drop-shadow-xl md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
-					<img alt="" sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
-						srcset="/avatar.jpeg"
-						src="/avatar.jpeg" width="400"
-						height="400" decoding="async" data-nimg="future" class="absolute inset-0 h-full w-full object-cover"
-						loading="lazy">
+					<Image src={avatarImage} width={400} format="webp" alt="Ibrohim Avatar Image" class="absolute inset-0 h-full w-full object-cover" />
 				</div>
 				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
 					<Button>Say Hi 👋🏻!</Button>
