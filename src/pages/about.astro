@@ -7,21 +7,25 @@ const title: string = "About Me ✌🏻"
 <MainLayout title={title}>
   <section id="hero-about" aria-labelledby="hero-about" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-auto">
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
-			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl relative">
+			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl relative rotate-0 sm:rotate-2">
         <span class="absolute -top-16 sm:-top-20 right-40 text-7xl sm:text-9xl antialiased text-center">👨🏻‍💻</span>
         
 				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
-					<p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl">
+					<p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl mb-8">
 						{title}
 					</p>
-					<div class="mt-4 antialiased text-brand prose prose-lg">
+					<article class="mt-4 antialiased text-brand prose prose-lg">
             <p>A self-taught developer, tech researcher, product designer, and lifelong learner from Indonesia. This individual possesses a unique set of skills that sets them apart in the tech industry.</p>
             <p>With a passion for technology and design, he has honed their skills in frontend development, product design, and research.</p>
             <p>His ability to adapt and learn quickly has allowed him to stay current with industry trends and advancements.</p>
             <p>As a creative problem-solver, he brings a unique perspective to the development process and has a talent for creating user-friendly, visually appealing products which is a valuable asset.</p>
-          </div>
+          </article>
+        </div>
+      </div>
 
-          <p class="mt-8 font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl">
+      <div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl relative mt-8 rotate-0 sm:-rotate-2">
+        <div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
+          <p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl mb-8">
 						Story 📰
 					</p>
 					<article class="mt-4 antialiased text-brand prose prose-lg">
@@ -36,6 +40,8 @@ const title: string = "About Me ✌🏻"
             <p>I like to explore the development of technology, especially web technology, read programming articles, watch programming videos, and participate in technology forums. Continue to learn to improve logic and problem-solving to become a relevant software engineer according to technological developments.</p>
             <p>Currently, I focus on becoming a Fullstack Developer and Product Designer which I think is relevant to what I like 😃.</p>
           </article>
+
+          <span class="flex justify-end text-5xl mt-8 mr-24">✍🏻</span>
 
 				</div>
 			</div>
