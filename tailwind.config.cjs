@@ -1,8 +1,14 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   darkMode: 'media',
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontFamily: {
+        'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
+				'serif': ['Erode', ...defaultTheme.fontFamily.serif]
+      },
 			borderRadius: {
         '4xl': '2rem',
 				'5xl': '3rem',

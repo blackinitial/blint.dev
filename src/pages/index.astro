@@ -34,7 +34,7 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 						<span class="block shining-text">{name} –</span>
 						<span class="text-brand-head" set:html={role.replace("&", "& <br />")}/>
 					</p>
-					<p class="mt-4 text-lg antialiased tracking-tight leading-relaxed text-brand">{description}</p>
+					<p class="mt-4 text-xl text-brand prose">{description}</p>
 
 					<div class="mx-4 mt-4 flex flex-row flex-wrap items-center justify-center">
 						{socials.map(({ title, url, icon }) => (
