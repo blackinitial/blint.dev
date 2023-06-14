@@ -24,7 +24,7 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 <MainLayout title={`${name} - ${role}`} description={description}>
 	<section id="hero-home" aria-labelledby="hero-home" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-full">
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
-			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl">
+			<div class="bg-card pt-px drop-shadow-xl sm:rounded-lg">
 				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 drop-shadow-xl md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
 					<Image src={avatarImage} width={400} format="webp" alt="Ibrohim Avatar Image" class="absolute inset-0 h-full w-full object-cover" />
 				</div>
@@ -32,15 +32,15 @@ const socials: { title: string, icon: IconProps['icon'], url: string }[] = [
 					<Button>Say Hi 👋🏻!</Button>
 					<p class="mt-8 font-display text-4xl font-extrabold tracking-normal leading-tight text-slate-900 sm:text-5xl">
 						<span class="block shining-text">{name} –</span>
-						<span class="text-brand-head" set:html={role.replace("&", "& <br />")}/>
+						<span class="text-card-foreground" set:html={role.replace("&", "& <br />")}/>
 					</p>
-					<p class="mt-4 text-xl text-brand prose">{description}</p>
+					<p class="mt-4 text-xl text-muted-foreground prose">{description}</p>
 
 					<div class="mx-4 mt-4 flex flex-row flex-wrap items-center justify-center">
 						{socials.map(({ title, url, icon }) => (
 							<div class="mx-4 mt-8">
 								<a target="_blank" href={url} title={`Follow on ${title}`} class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300">
-									<Icon icon={icon} size="1.75em" color="var(--gradient-stop-2)" gradient />
+									<Icon icon={icon} size="1.75em" color="hsl(var(--primary))" gradient />
 								</a>
 							</div>
 						))}

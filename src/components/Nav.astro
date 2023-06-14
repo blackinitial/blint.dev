@@ -9,14 +9,14 @@ const menus: { title: string, url: string }[] = [
 ]
 ---
 <div class="relative flex justify-center sm:justify-start px-6 pt-0 mt-0 mx-auto max-w-5xl mb-4 sm:pt-8 sm:-mb-16 z-10">
-  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-5xl bg-brand-card drop-shadow-md">
+  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-full bg-card drop-shadow-md">
     {menus.map(({ title, url }) => (
       <a href={url}
         aria-current={Astro.url.pathname === url}
         class={
           `px-4 py-2 mr-1 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
             ${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
-              ? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-brand'}`
+              ? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-primary'}`
         }>
         {title}
       </a>
@@ -34,7 +34,7 @@ const menus: { title: string, url: string }[] = [
 
 <style>
 	button.theme-toggle {
-    @apply flex border rounded-full outline-1 cursor-pointer shadow-inner bg-brand;
+    @apply flex border rounded-full outline-1 cursor-pointer shadow-inner bg-muted;
 	}
 
 	.icon {
@@ -42,7 +42,7 @@ const menus: { title: string, url: string }[] = [
 	}
 
 	.icon.light::before {
-    @apply -z-10 absolute inset-0 bg-brand-primary rounded-full;
+    @apply -z-10 absolute inset-0 bg-primary rounded-full;
 		content: '';
 	}
 

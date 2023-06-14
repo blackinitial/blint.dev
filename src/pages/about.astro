@@ -7,14 +7,14 @@ const title: string = "About Me ✌🏻"
 <MainLayout title={title}>
   <section id="hero-about" aria-labelledby="hero-about" class="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16 h-auto">
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
-			<div class="bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl relative rotate-0 sm:rotate-2">
+			<div class="bg-card pt-px drop-shadow-xl sm:rounded-lg relative rotate-0 sm:rotate-2">
         <span class="absolute -top-16 sm:-top-20 right-40 text-7xl sm:text-9xl text-center">👨🏻‍💻</span>
         
 				<div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
-					<p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-brand-head sm:text-5xl mb-8">
+					<p class="font-display text-4xl font-extrabold tracking-normal leading-tight text-card-foreground sm:text-5xl mb-8">
 						{title}
 					</p>
-					<article class="mt-4 text-xl text-brand prose">
+					<article class="mt-4 text-xl text-muted-foreground prose">
             <p>A self-taught developer, tech researcher, product designer, and lifelong learner from Indonesia. This individual possesses a unique set of skills that sets them apart in the tech industry.</p>
             <p>With a passion for technology and design, he has honed their skills in frontend development, product design, and research.</p>
             <p>His ability to adapt and learn quickly has allowed him to stay current with industry trends and advancements.</p>
@@ -23,13 +23,13 @@ const title: string = "About Me ✌🏻"
         </div>
       </div>
 
-      <div class="relative bg-brand-card pt-px drop-shadow-xl sm:rounded-6xl mt-8 rotate-0 sm:-rotate-2">
+      <div class="relative bg-card pt-px drop-shadow-xl sm:rounded-lg mt-8 rotate-0 sm:-rotate-2">
         <div class="paper absolute inset-0 block w-full h-full pl-20"></div>
         <div class="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
-          <p class="font-display text-4xl font-extrabold font-serif tracking-normal leading-tight text-brand-head sm:text-5xl mb-8">
+          <p class="font-display text-4xl font-extrabold font-serif tracking-normal leading-tight text-card-foreground sm:text-5xl mb-8">
 						Story 📰
 					</p>
-					<article class="mt-4 text-brand prose prose-xl font-serif text-justify">
+					<article class="mt-4 text-muted-foreground prose prose-xl font-serif text-justify">
             <p>I've always liked technology since I was a kid, I like to look at games, and think about how things work. but unfortunately at that time, I wasn't close to computers (they didn't support it). I like art and visual images, I used to love drawing paper and including my drawings (calligraphy), until I just saw the cracks in the wall, and my imagination explored.</p>
             <p>I started to know computers massively in internet cafes in junior high school in 2007, often internet every time I came home from school, watched youtube, and liked to survive on the internet, but not until maniacal online games. at that time I didn't know how to make a website either.</p>
             <p>When I was in high school + after 3 years at the boarding school, I started holding a Symbian cellphone and liked to modify the appearance of the cellphone starting with themes, icons, and widgets. started learning a little python language just for display scripting. learned to write blogs sharing Symbian applications (illegal) and entered internet forums.</p>
@@ -53,16 +53,16 @@ const title: string = "About Me ✌🏻"
 <style>
 .paper {
   content: '';
-  @apply absolute inset-0 w-full h-full -z-10 rounded-6xl;
-  background-image: linear-gradient(var(--brand-bg) 0.05em, transparent 0.05em);
+  @apply absolute inset-0 w-full h-full -z-10 rounded-xl;
+  background-image: linear-gradient(var(--card-foreground) 0.05em, transparent 0.05em);
   background-size: 100% 2em;
 }
 .paper::before {
   content: '';
-  @apply absolute inset-0 w-full h-36 bg-brand-card rounded-t-6xl;
+  @apply absolute inset-0 w-full h-36 bg-muted rounded-t-xl;
 }
 .paper::after {
   content: '';
-  @apply absolute left-0 bottom-0 w-full h-36 bg-brand-card rounded-b-6xl;
+  @apply absolute left-0 bottom-0 w-full h-36 bg-muted rounded-b-xl;
 }
 </style>
