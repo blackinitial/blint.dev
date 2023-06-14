@@ -12,28 +12,10 @@ module.exports = {
       },
     },
 		extend: {
-			// fontFamily: {
-      //   'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
-			// 	'serif': ['Erode', ...defaultTheme.fontFamily.serif]
-      // },
-			// borderRadius: {
-      //   '4xl': '2rem',
-			// 	'5xl': '3rem',
-			// 	'6xl': '5rem',
-      // },
-			// colors: {
-			// 	'brand-primary': 'var(--brand-primary)',
-			// 	'brand-secondary': 'var(--brand-secondary)',
-			// 	'brand-tertiary': 'var(--brand-tertiary)'
-			// },
-			// backgroundColor: {
-      //   brand: 'var(--brand-bg)',
-			// 	'brand-card': 'var(--brand-card)'
-      // },
-      // textColor: {
-      //   brand: 'var(--brand-text)',
-			// 	'brand-head': 'var(--brand-head)'
-      // },
+			fontFamily: {
+        'sans': ['Satoshi', ...defaultTheme.fontFamily.sans],
+				'serif': ['Erode', ...defaultTheme.fontFamily.serif]
+      },
 			colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
