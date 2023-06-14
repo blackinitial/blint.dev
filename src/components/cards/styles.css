@@ -31,7 +31,7 @@
   --radius: 1.2rem;
 }
 
-.dark [data-section="cards"] {
+.theme-dark [data-section="cards"] {
   --background: 224 71% 4%;
   --foreground: 213 31% 91%;
 
