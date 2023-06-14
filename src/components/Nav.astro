@@ -8,28 +8,28 @@ const menus: { title: string, url: string }[] = [
 	{ title: 'About', url: '/about/' },
 ]
 ---
-<div class="relative flex justify-center sm:justify-start px-6 pt-0 mt-0 mx-auto max-w-5xl mb-4 sm:pt-8 sm:-mb-16 z-10">
-  <div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-full bg-card drop-shadow-md">
-    {menus.map(({ title, url }) => (
-      <a href={url}
-        aria-current={Astro.url.pathname === url}
-        class={
-          `px-4 py-2 mr-1 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
-            ${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
-              ? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-primary'}`
-        }>
-        {title}
-      </a>
-    ))}
+<div class="fixed inset-x-0 bottom-0 md:bottom-auto md:top-0 flex justify-center sm:justify-start px-0 md:px-6 pt-0 mt-0 mx-auto max-w-5xl mb-6 md:mb-4 sm:pt-8 sm:-mb-16 z-10">
+	<div class="px-4 py-3 flex items-start justify-center sm:items-center w-fit rounded-full bg-card drop-shadow-xl">
+		{menus.map(({ title, url }) => (
+			<a href={url}
+				aria-current={Astro.url.pathname === url}
+				class={
+					`px-4 py-2 mr-1 last:mr-0 hover:bg-amber-400 hover:text-white rounded-full transition
+						${Astro.url.pathname === url || (url !== '/' && Astro.url.pathname.startsWith(url)) 
+							? 'text-white bg-gradient-to-br from-amber-200 via-amber-500 to-amber-700' : 'text-primary'}`
+				}>
+				{title}
+			</a>
+		))}
 
-    <theme-toggle>
-      <button class="theme-toggle">
-        <span class="sr-only">Dark theme</span>
-        <span class="icon light"><Icon icon="sun" /></span>
-        <span class="icon dark"><Icon icon="moon-stars" /></span>
-      </button>
-    </theme-toggle>
-  </div>
+		<theme-toggle>
+			<button class="theme-toggle">
+				<span class="sr-only">Dark theme</span>
+				<span class="icon light"><Icon icon="sun" /></span>
+				<span class="icon dark"><Icon icon="moon-stars" /></span>
+			</button>
+		</theme-toggle>
+	</div>
 </div>
 
 <style>

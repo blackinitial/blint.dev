@@ -1,0 +1,23 @@
+---
+import MainLayout from '../layouts/main.astro';
+import Icon, { Props as IconProps } from '../components/Icon.astro';
+
+const title: string = "Icon 🗂"
+const icons: { icon: IconProps['icon'] }[] = [{icon:'list'},{icon:'heart'},{icon:'apple'},{icon:'astro'},{icon:'bem'},{icon:'codepen'},{icon:'codesandbox'},{icon:'css3'},{icon:'digitalocean'},{icon:'discord'},{icon:'figma'},{icon:'git'},{icon:'github'},{icon:'gitlab'},{icon:'googleanalytics'},{icon:'googlechrome'},{icon:'googlecloud'},{icon:'googlesheets'},{icon:'headlessui'},{icon:'html5'},{icon:'javascript'},{icon:'linux'},{icon:'mariadb'},{icon:'mysql'},{icon:'netlify'},{icon:'nodedotjs'},{icon:'notion'},{icon:'npm'},{icon:'nuxtdotjs'},{icon:'postgresql'},{icon:'prisma'},{icon:'react'},{icon:'remix'},{icon:'sass'},{icon:'slack'},{icon:'sqlite'},{icon:'strapi'},{icon:'tailwindcss'},{icon:'telegram'},{icon:'typescript'},{icon:'visualstudiocode'},{icon:'vuedotjs'},{icon:'warp'},{icon:'wordpress'},{icon:'sanity'},{icon:'sanitybox'},{icon:'fly'}]
+---
+<MainLayout title={title}>
+  <h1>Icon page</h1>
+  
+  <div class="bg-card pt-px drop-shadow-xl sm:rounded-lg">
+    <div class="mx-4 mt-4 flex flex-row flex-wrap items-center justify-center">
+      {icons.map(({ icon }) => (
+        <div class="mx-4 mt-8">
+          <a target="_blank" title={`Follow on ${icon}`} class="inline-flex items-center text-base font-medium tracking-tight text-amber-500 hover:text-amber-300">
+            <Icon icon={icon} size="1.75em" color="var(--gradient-stop-2)" gradient />
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</MainLayout>

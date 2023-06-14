@@ -22,8 +22,12 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="antialiased relative transition min-h-screen">
+		<div class="md:hidden pt-8 text-center">
+			<a href="/" class="font-serif text-md text-card-foreground">blint.dev</a>
+		</div>
 		<Nav />
 		<slot />
+		<div class="py-12 md:py-0"></div>
 		<Footer />
 		<Background />
 	</body>
