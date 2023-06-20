@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components';
-import avatarImage from '../assets/avatar.jpeg';
 import MainLayout from '../layouts/main.astro';
 import Button from '../components/Button.astro';
 import Icon, { Props as IconProps } from '../components/Icon.astro';
@@ -32,11 +30,11 @@ const mainSkill: { icon: IconProps['icon'], title: string, subtitle: string }[] 
 		<div class="relative mx-auto max-w-5xl pt-16 pb-8 sm:px-6">
 			<div class="bg-card pt-px drop-shadow-md rounded-lg mb-4">
 				<div class="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 drop-shadow-xl md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
-					<Image src={avatarImage} width={400} format="webp" alt="Ibrohim Avatar Image" class="absolute inset-0 h-full w-full object-cover" />
+					<img src="/avatar.jpeg" width="400" height="711" alt="Ibrohim Avatar Image" class="absolute inset-0 h-full w-full object-cover">
 				</div>
 				<div class="text-center md:text-left px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20">
 					<Button>Say Hi 👋🏻!</Button>
-					<p class="mt-8 font-display text-3xl md:text-4xl font-extrabold tracking-normal leading-tight text-slate-900 sm:text-5xl">
+					<p class="mt-8 font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-normal leading-tight text-slate-900">
 						<span class="block shining-text">{name} –</span>
 						<span class="text-card-foreground" set:html={role.replace("&", "& <br />")}/>
 					</p>
