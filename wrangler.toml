@@ -1,5 +1,5 @@
 # Cloudflare Pages. Dashboard: build command empty, output directory "/" (repo root).
 # `name` must match the Pages project name.
-name = "blint-dev"
+name = "blint.my.id"
 compatibility_date = "2026-11-08"
 pages_build_output_dir = "."
