@@ -1,8 +1,8 @@
 # Design System — blint.dev (Ibrohim Hanafi)
 
-Dokumen ini mengekstrak design system dari website asli [blint.my.id](https://blint.my.id)
+Dokumen ini mengekstrak design system dari versi asli [blint.my.id](https://blint.my.id)
 (built with Astro + Tailwind + shadcn-style tokens) dan mendokumentasikan replikanya
-dalam **pure HTML/CSS/JS** (`assets/style.css`).
+dalam **pure HTML/CSS/JS** (`assets/style.css`) yang sekarang ada di repo ini.
 
 ---
 
@@ -176,9 +176,9 @@ Variasi:
 
 - Pill: `padding .25rem 1rem`, warna `text-amber-500`, ring 1px inset amber.
 - Focus: `ring-2 ring-amber-400`.
-- Klik → confetti (100 partikel, spread 70°, angle 55°, 7 warna).
-- Vanilla implementation: satu `<canvas>` `position:fixed` + `requestAnimationFrame`,
-  gravitasi & decay. `prefers-reduced-motion` → skip.
+- Klik → 16 kotak kecil menyebar radial dari pusat tombol (7 warna), lalu dihapus setelah 950ms.
+- Implementasi vanilla: elemen `div.confetti-piece` di `body`, posisi & jarak diatur lewat
+  custom property (`---x`, `---y`, `---r`) dan animasi CSS. `prefers-reduced-motion` → skip.
 
 ### 5.6 Social icons
 
@@ -234,7 +234,7 @@ blint.my.id/
 │   ├── main.js       # theme toggle + confetti
 │   ├── avatar.jpg    # avatar (dari /avatar.jpeg)
 │   └── favicon.svg
-└── DESIGN-SYSTEM.md
+└── DESIGN.md
 ```
 
 ## 8. Aksesibilitas
