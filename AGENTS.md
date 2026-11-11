@@ -2,7 +2,7 @@
 
 ## Project
 
-Personal portfolio of Ibrohim Hanafi, served at https://blint.dev.
+Personal portfolio of Ibrohim Hanafi, served at https://blint.my.id , old on https://blint.dev.
 Static site: plain HTML, one CSS file, one JS file. No framework, no build step, no dependencies.
 
 ## Commands
@@ -22,6 +22,7 @@ blog.html         # placeholder ("Coming Soon")
 assets/style.css  # all styling, hand-written
 assets/main.js    # theme toggle, cursor spotlight, confetti
 DESIGN.md         # design tokens + component specs — read before changing UI
+design/           # FigCraft source (blint.figcraft) + DESIGN-SYSTEM.md
 wrangler.toml     # Cloudflare Pages config (no build step)
 ```
 
